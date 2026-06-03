@@ -24,9 +24,9 @@ export function BenchmarkComparisonPage() {
   );
 
   return (
-    <main>
+    <main className="p-4">
       <header>
-        <h1>No Chart Crimes</h1>
+        <h1 className="font-bold text-2xl">No Chart Crimes</h1>
         <p>
           Compare AI model benchmark scores without charts, hidden axes, or
           vendor-written summaries.
