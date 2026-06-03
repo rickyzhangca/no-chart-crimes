@@ -18,19 +18,19 @@ importers:
         specifier: ^2.1.10
         version: 2.1.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@tailwindcss/vite':
-        specifier: latest
+        specifier: ^4.3.0
         version: 4.3.0(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(yaml@2.9.0))
       '@tanstack/react-router':
-        specifier: latest
+        specifier: ^1.170.11
         version: 1.170.11(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@tanstack/react-start':
-        specifier: latest
+        specifier: ^1.168.19
         version: 1.168.19(crossws@0.4.5(srvx@0.11.16))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(yaml@2.9.0))
       '@tanstack/react-table':
-        specifier: latest
+        specifier: ^8.21.3
         version: 8.21.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@vitejs/plugin-react':
-        specifier: latest
+        specifier: ^6.0.2
         version: 6.0.2(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(yaml@2.9.0))
       class-variance-authority:
         specifier: ^0.7.1
@@ -39,62 +39,62 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       nitro:
-        specifier: latest
+        specifier: 3.0.260603-beta
         version: 3.0.260603-beta(chokidar@5.0.0)(jiti@2.7.0)(lru-cache@11.5.1)(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(yaml@2.9.0))
       react:
-        specifier: latest
+        specifier: ^19.2.7
         version: 19.2.7
       react-dom:
-        specifier: latest
+        specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
       tailwindcss:
-        specifier: latest
+        specifier: ^4.3.0
         version: 4.3.0
       vite:
-        specifier: latest
+        specifier: ^8.0.16
         version: 8.0.16(@types/node@25.9.1)(jiti@2.7.0)(yaml@2.9.0)
     devDependencies:
       '@biomejs/biome':
-        specifier: latest
+        specifier: ^2.4.16
         version: 2.4.16
       '@testing-library/jest-dom':
-        specifier: latest
+        specifier: ^6.9.1
         version: 6.9.1
       '@testing-library/react':
-        specifier: latest
+        specifier: ^16.3.2
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.16))(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@testing-library/user-event':
-        specifier: latest
+        specifier: ^14.6.1
         version: 14.6.1(@testing-library/dom@10.4.1)
       '@types/node':
-        specifier: latest
+        specifier: ^25.9.1
         version: 25.9.1
       '@types/react':
-        specifier: latest
+        specifier: ^19.2.16
         version: 19.2.16
       '@types/react-dom':
-        specifier: latest
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.16)
       husky:
-        specifier: latest
+        specifier: ^9.1.7
         version: 9.1.7
       jsdom:
-        specifier: latest
+        specifier: ^29.1.1
         version: 29.1.1
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: latest
+        specifier: ^6.0.3
         version: 6.0.3
       ultracite:
-        specifier: latest
+        specifier: ^7.8.1
         version: 7.8.1
       vitest:
-        specifier: latest
+        specifier: ^4.1.8
         version: 4.1.8(@types/node@25.9.1)(jsdom@29.1.1)(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(yaml@2.9.0))
 
 packages:
