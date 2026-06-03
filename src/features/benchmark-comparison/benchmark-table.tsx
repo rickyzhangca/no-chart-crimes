@@ -1,47 +1,44 @@
 import {
+  type ColumnDef,
   flexRender,
   getCoreRowModel,
   useReactTable,
-  type ColumnDef,
-} from '@tanstack/react-table'
-import { useMemo } from 'react'
+} from "@tanstack/react-table";
+import { useMemo } from "react";
 
-import type {
-  BenchmarkRow,
-  ModelSummary,
-} from '../../data/benchmarkSnapshot'
+import type { BenchmarkRow, ModelSummary } from "../../data/benchmark-snapshot";
 
-type BenchmarkTableProps = {
-  rows: readonly BenchmarkRow[]
-  selectedModels: readonly ModelSummary[]
+interface BenchmarkTableProps {
+  rows: readonly BenchmarkRow[];
+  selectedModels: readonly ModelSummary[];
 }
 
 export function BenchmarkTable({ rows, selectedModels }: BenchmarkTableProps) {
   const columns = useMemo<ColumnDef<BenchmarkRow>[]>(
     () => [
       {
-        id: 'benchmark',
-        header: 'Benchmark',
+        id: "benchmark",
+        header: "Benchmark",
         cell: ({ row }) => row.original.benchmark.name,
       },
       ...selectedModels.map<ColumnDef<BenchmarkRow>>((model) => ({
         id: model.id,
         header: model.name,
         cell: ({ row }) => {
-          const score = row.original.scores[model.id]
+          const score = row.original.scores[model.id];
 
-          return score ? String(score.value) : '-'
+          return score ? String(score.value) : "-";
         },
       })),
     ],
-    [selectedModels],
-  )
+    [selectedModels]
+  );
 
   const table = useReactTable({
     columns,
     data: [...rows],
     getCoreRowModel: getCoreRowModel(),
-  })
+  });
 
   return (
     <section aria-labelledby="benchmark-table-heading">
@@ -57,7 +54,7 @@ export function BenchmarkTable({ rows, selectedModels }: BenchmarkTableProps) {
                   <th key={header.id} scope="col">
                     {flexRender(
                       header.column.columnDef.header,
-                      header.getContext(),
+                      header.getContext()
                     )}
                   </th>
                 ))}
@@ -70,18 +67,18 @@ export function BenchmarkTable({ rows, selectedModels }: BenchmarkTableProps) {
                 {row.getVisibleCells().map((cell) => {
                   const cellContent = flexRender(
                     cell.column.columnDef.cell,
-                    cell.getContext(),
-                  )
+                    cell.getContext()
+                  );
 
-                  if (cell.column.id === 'benchmark') {
+                  if (cell.column.id === "benchmark") {
                     return (
                       <th key={cell.id} scope="row">
                         {cellContent}
                       </th>
-                    )
+                    );
                   }
 
-                  return <td key={cell.id}>{cellContent}</td>
+                  return <td key={cell.id}>{cellContent}</td>;
                 })}
               </tr>
             ))}
@@ -89,5 +86,5 @@ export function BenchmarkTable({ rows, selectedModels }: BenchmarkTableProps) {
         </table>
       )}
     </section>
-  )
+  );
 }

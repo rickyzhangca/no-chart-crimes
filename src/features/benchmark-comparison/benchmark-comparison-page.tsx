@@ -1,27 +1,27 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState } from "react";
 
 import {
-  DEFAULT_SELECTED_MODEL_IDS,
   buildBenchmarkRows,
+  DEFAULT_SELECTED_MODEL_IDS,
   getModelsByIds,
   modelSummaries,
-} from '../../data/benchmarkSnapshot'
-import { BenchmarkTable } from './BenchmarkTable'
-import { ModelSelector } from './ModelSelector'
+} from "../../data/benchmark-snapshot";
+import { BenchmarkTable } from "./benchmark-table";
+import { ModelSelector } from "./model-selector";
 
 export function BenchmarkComparisonPage() {
   const [selectedModelIds, setSelectedModelIds] = useState<string[]>([
     ...DEFAULT_SELECTED_MODEL_IDS,
-  ])
+  ]);
 
   const selectedModels = useMemo(
     () => getModelsByIds(selectedModelIds),
-    [selectedModelIds],
-  )
+    [selectedModelIds]
+  );
   const rows = useMemo(
     () => buildBenchmarkRows(selectedModelIds),
-    [selectedModelIds],
-  )
+    [selectedModelIds]
+  );
 
   return (
     <main>
@@ -35,11 +35,11 @@ export function BenchmarkComparisonPage() {
 
       <ModelSelector
         models={modelSummaries}
-        selectedModelIds={selectedModelIds}
         onSelectedModelIdsChange={setSelectedModelIds}
+        selectedModelIds={selectedModelIds}
       />
 
       <BenchmarkTable rows={rows} selectedModels={selectedModels} />
     </main>
-  )
+  );
 }

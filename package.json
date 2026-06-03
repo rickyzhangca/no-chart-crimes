@@ -1,32 +1,37 @@
 {
-  "name": "no-chart-crimes",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "start": "node .output/server/index.mjs",
-    "test": "vitest run --passWithNoTests"
-  },
   "dependencies": {
     "@tanstack/react-router": "latest",
     "@tanstack/react-start": "latest",
     "@tanstack/react-table": "latest",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "nitro": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "nitro": "latest"
+    "vite": "latest"
   },
   "devDependencies": {
+    "@biomejs/biome": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "husky": "latest",
     "jsdom": "latest",
     "typescript": "latest",
+    "ultracite": "latest",
     "vitest": "latest"
-  }
+  },
+  "name": "no-chart-crimes",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "test": "vitest run --passWithNoTests",
+    "prepare": "husky",
+    "clean": "biome format --write && biome lint --write"
+  },
+  "type": "module",
+  "private": true
 }

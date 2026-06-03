@@ -1,9 +1,9 @@
-import type { ModelSummary } from '../../data/benchmarkSnapshot'
+import type { ModelSummary } from "../../data/benchmark-snapshot";
 
-type ModelSelectorProps = {
-  models: readonly ModelSummary[]
-  selectedModelIds: readonly string[]
-  onSelectedModelIdsChange: (modelIds: string[]) => void
+interface ModelSelectorProps {
+  models: readonly ModelSummary[];
+  onSelectedModelIdsChange: (modelIds: string[]) => void;
+  selectedModelIds: readonly string[];
 }
 
 export function ModelSelector({
@@ -11,17 +11,17 @@ export function ModelSelector({
   selectedModelIds,
   onSelectedModelIdsChange,
 }: ModelSelectorProps) {
-  const selectedIds = new Set(selectedModelIds)
+  const selectedIds = new Set(selectedModelIds);
 
   function toggleModel(modelId: string) {
     if (selectedIds.has(modelId)) {
       onSelectedModelIdsChange(
-        selectedModelIds.filter((selectedId) => selectedId !== modelId),
-      )
-      return
+        selectedModelIds.filter((selectedId) => selectedId !== modelId)
+      );
+      return;
     }
 
-    onSelectedModelIdsChange([...selectedModelIds, modelId])
+    onSelectedModelIdsChange([...selectedModelIds, modelId]);
   }
 
   return (
@@ -31,14 +31,14 @@ export function ModelSelector({
         {models.map((model) => (
           <label key={model.id}>
             <input
-              type="checkbox"
               checked={selectedIds.has(model.id)}
               onChange={() => toggleModel(model.id)}
-            />{' '}
+              type="checkbox"
+            />{" "}
             {model.name} <span>{model.provider}</span>
           </label>
         ))}
       </div>
     </section>
-  )
+  );
 }

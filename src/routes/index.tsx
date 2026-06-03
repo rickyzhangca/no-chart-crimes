@@ -1,7 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-import { BenchmarkComparisonPage } from '../features/benchmark-comparison/BenchmarkComparisonPage'
+import { BenchmarkComparisonPage } from "../features/benchmark-comparison/benchmark-comparison-page";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: BenchmarkComparisonPage,
-})
+});
