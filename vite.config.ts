@@ -1,10 +1,14 @@
 /// <reference types="vitest/config" />
 
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import react from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vitest/config";
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode, command }) => {
   const isTest = mode === "test";
@@ -31,6 +35,11 @@ export default defineConfig(({ mode, command }) => {
           ]),
       ...(isTest ? [react()] : []),
     ],
+    resolve: {
+      alias: {
+        "@": path.resolve(projectRoot, "src"),
+      },
+    },
     server: {
       port: 3000,
     },

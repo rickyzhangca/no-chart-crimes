@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-
+import { Button } from "@/components/ui/button";
 import {
   buildBenchmarkRows,
   DEFAULT_SELECTED_MODEL_IDS,
@@ -31,6 +31,7 @@ export function BenchmarkComparisonPage() {
           Compare AI model benchmark scores without charts, hidden axes, or
           vendor-written summaries.
         </p>
+        <Button>Test Button</Button>
       </header>
 
       <ModelSelector
